@@ -3,21 +3,21 @@ Fast and simple build script for C/C++ projects.
 
 ## Usage
 
-### 1. Create project directory
+#### 1. Create project directory
 ```
 ~$ mkdir newproject
 ~$ cd newproject
 ```
 
 
-### 2. Download build script and make it executable
+#### 2. Download build script and make it executable
 ```
 ~/newproject$ wget https://raw.githubusercontent.com/MrWeb123/build-sh/master/build.sh
 ~/newproject$ chmod +x build.sh
 ```
 
 
-### 3. Run build script
+#### 3. Run build script
 ```
 ~/newproject$ ./build.sh
 ~/newproject$ ls
@@ -30,7 +30,7 @@ Script created some dirs and files for your project:
 * * build.cfg - config file used by build script. It contains flags for compiler.
 
 
-### 4. Edit your files and run script again
+#### 4. Edit your files and run script again
 ```
 ~/newproject$ vim ./src/main.c
 ~/newproject$ ./build.sh
@@ -42,7 +42,7 @@ bin/main.o  build.cfg  build.sh  newproject  src/main.c
 * src/main.c  - source file
 
 
-### 5. Thats it! Everything works as it should be. You can now modify your code and repeat compilation without a hassle.
+#### 5. Thats it! Everything works as it should be. You can now modify your code and repeat compilation without a hassle.
 ```
 ~/newproject$ ./newproject
 Hello World!
