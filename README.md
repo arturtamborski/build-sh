@@ -3,31 +3,34 @@ Fast and simple build script for C/C++ projects.
 
 ## Usage
 
-1. Create project directory
+### 1. Create project directory
 ```
 ~$ mkdir newproject
 ~$ cd newproject
 ```
 
-2. Download build script and make it executable
+
+### 2. Download build script and make it executable
 ```
 ~/newproject$ wget https://raw.githubusercontent.com/MrWeb123/build-sh/master/build.sh
 ~/newproject$ chmod +x build.sh
 ```
 
-3. Run build script
+
+### 3. Run build script
 ```
 ~/newproject$ ./build.sh
 ~/newproject$ ls
 bin  build.cfg  build.sh  src
 ```
 Script created some dirs and files for your project:
-* bin/      - this directory is used for storing output files
-* src/      - source code directory
-* build.sh  - build script
-* build.cfg - config file used by build script. It contains flags for compiler.
+* bin/        - this directory is used for storing output files
+* src/        - source code directory
+* build.sh    - build script
+* * build.cfg - config file used by build script. It contains flags for compiler.
 
-4. Edit your files and run script again
+
+### 4. Edit your files and run script again
 ```
 ~/newproject$ vim ./src/main.c
 ~/newproject$ ./build.sh
@@ -38,11 +41,14 @@ bin/main.o  build.cfg  build.sh  newproject  src/main.c
 * bin/main.o  - output file
 * src/main.c  - source file
 
-5. Thats it! Everything works as it should be. You can now modify your code and repeat compilation without a hassle.
+
+### 5. Thats it! Everything works as it should be. You can now modify your code and repeat compilation without a hassle.
 ```
 ~/newproject$ ./newproject
 Hello World!
 ```
+
+
 
 ## Features
 * Fast shell script, no external libraries or anything like that
@@ -61,6 +67,7 @@ Config file is as simple as possible because it contains ony few informations:
 
 Every other tag in braskets will be ignored.
 Value for each tag can be spanned on multiple lines
+
 
 Example
 ```
@@ -83,6 +90,7 @@ gcc
 [LINKER_FLAGS]
 -L/usr/lib
 ```
+
 
 Comments are marked by '#' sign and they must start in new line.
 ```
