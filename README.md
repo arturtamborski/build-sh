@@ -1,14 +1,13 @@
 # build-sh
 Fast and simple build script for C/C++ projects.
 
-==========================
-
+-----------------------
 ## Features
 * Fast shell script, no external libraries or anything like that
 * separate config file for build management
 * smart compiling based on last edited files
 * Works in bash >= 4.0
-* 
+
 -----------------------
 
 ## Usage
@@ -79,7 +78,7 @@ Example
 runthis
 
 [COMPILER]
-gcc
+/usr/bin/gcc
 
 [COMPILER_FLAGS]
 # -c flag is very important!
@@ -88,7 +87,7 @@ gcc
 -std=c11
 
 [LINKER]
-gcc
+/usr/bin/gcc
 
 [LINKER_FLAGS]
 -L/usr/lib
