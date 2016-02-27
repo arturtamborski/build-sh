@@ -1,5 +1,5 @@
 #!/bin/bash
-# info: Leisure2D build script
+# info: Simple build script for C/C++ projects.
 #       Written by Artur Tamborski <tamborskiartur@gmail.com>
 # date: 27.02.2016
 # warn: Its wery specific script, it may not work for all projects.
