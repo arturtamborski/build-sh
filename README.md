@@ -12,7 +12,7 @@ Fast and simple build script for C/C++ projects.
 2. Download build script and make it executable
 ```
 ~/newproject$ wget https://raw.githubusercontent.com/MrWeb123/build-sh/master/build.sh
-~$ chmod +x build.sh
+~/newproject$ chmod +x build.sh
 ```
 
 3. Run build script
