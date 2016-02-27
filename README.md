@@ -1,6 +1,13 @@
 # build-sh
 Fast and simple build script for C/C++ projects.
 
+## Features
+* Fast shell script, no external libraries or anything like that
+* separate config file for build management
+* smart compiling based on last edited files
+* Works in bash >= 4.0
+
+
 ## Usage
 
 #### 1. Create project directory
@@ -27,7 +34,7 @@ Script created some dirs and files for your project:
 * bin/        - this directory is used for storing output files
 * src/        - source code directory
 * build.sh    - build script
-* * build.cfg - config file used by build script. It contains flags for compiler.
+* build.cfg   - config file used by build script. It contains flags for compiler.
 
 
 #### 4. Edit your files and run script again
@@ -50,15 +57,9 @@ Hello World!
 
 
 
-## Features
-* Fast shell script, no external libraries or anything like that
-* separate config file for build management
-* smart compiling based on last edited files
-* Works in bash >= 4.0
 
 ## Config file
-Config file is as simple as possible because it contains ony few informations:
-
+Config file is as very simple because it contains ony few informations:
 * Executable file name  - [EXEC_NAME]
 * Compiler command      - [COMPILER]
 * Compiler flags        - [COMPILER_FLAGS]
