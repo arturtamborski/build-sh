@@ -1,7 +1,8 @@
 build-sh
 ========
 ### Fast and simple build script for C/C++ projects.
-It works kind of like GNU Make. Great for simple, projects with multiple files.
+It works kind of like GNU Make. Great for simple projects with multiple files.
+
 
 ### Features
   * Fast, in-shell script. Doesn't use external libraries or anything like that.
@@ -9,8 +10,8 @@ It works kind of like GNU Make. Great for simple, projects with multiple files.
   * Smart compiling based on last edited files.
   * Works in bash >= 4.0
 
-## Usage
 
+## Usage
 ##### 1. Create project directory
 ```bash
 ~$ mkdir newproject
@@ -45,12 +46,12 @@ Script created some dirs and files for your project:
 ~/newproject$ ls -R
 bin/main.o  build.cfg  build.sh  newproject  src/main.c
 ```
-* `newproject`  - executable compiled from ./src/main.c
+* `newproject`  - executable compiled from ./src/main.o
 * `bin/main.o`  - output file
 * `src/main.c`  - source file
 
 
-##### 5. Thats it! You can now modify your code and repeat compilation without a hassle.
+##### 5. That's it! You can now modify your code and repeat compilation without a hassle.
 ```
 ~/newproject$ ./newproject
 Hello World!
@@ -66,16 +67,14 @@ Config file is as very simple because it contains ony few tags:
   * `[LINKER]`          - Linker command
   * `[LINKER_FLAGS]`    - Linker flags
 
-Every other tag in braskets will be ignored.
+Other tags in braskets will be ignored.
 Value for each tag can be spanned on multiple lines
 
------------------------
-
-Example
+Example config file
 ```cfg
 # Default build.cfg file created at sob, 27 lut 2016, 22:33:35 CET
 [EXEC_NAME]
-runthis
+compiledapp.exe
 
 [COMPILER]
 /usr/bin/gcc
@@ -100,3 +99,40 @@ Comments are marked by '#' sign and they must start in new line.
 # valid comment
 -Wall # this is *INVALID*
 ```
+
+
+## Smart compiling
+Its cool feature for speeding up compilation process.
+Script compares modification time of src file and corresponding obj file
+and checks which one was modified first.
+If src file was modified after creation of obj file then it needs to be recompiled.
+But if src file was not modified since creation of corresponding obj file then this file is skipped.
+
+If you want to do full build then just remove `/bin` directory or delete every file in it.
+```shell
+~/newproject$ rm -r ./bin
+~/newproject$ ./build.sh # full build
+```
+
+
+## Vim integration
+You can put those lines in .vimrc to make simple binds to build script.
+```rc
+" <F7> Will run full build
+nnoremap <F8> :!rm -r ./bin && ./build.sh <CR>
+
+" <F8> Will run smart build
+nnoremap <F8> :!./build.sh <CR>
+
+" Super hacky thing(TM) to run compiled program by calling :!./thing 
+" where thing is path when vim was launched.
+" Works great with ./build.sh but **do not** change [EXEC_NAME] tag.
+" $ echo | basename `pwd`
+let out_program = "./" . system("basename `pwd`")
+nnoremap <F9> :exe ":!" . out_program <CR>
+```
+
+## TODO:
+ * support way to having multiple files with same names in different directories for `/bin` dir.
+ * more customization in `build.cfg`?
+ * better usage manual
