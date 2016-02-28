@@ -4,7 +4,7 @@ build-sh
 It works kind of like GNU Make. Great for simple projects with multiple files.
 
 
-### Features
+## Features
   * Fast, in-shell script. Doesn't use external libraries or anything like that.
   * Separate config file for build management.
   * Smart compiling based on last edited files.
