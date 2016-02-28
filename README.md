@@ -60,7 +60,7 @@ Hello World!
 
 
 ## Config file
-Config file is as very simple because it contains ony few tags:
+Config file is very simple because it contains only few tags:
   * `[EXEC_NAME]`       - Executable file name
   * `[COMPILER]`        - Compiler command
   * `[COMPILER_FLAGS]`  - Compiler flags
@@ -68,7 +68,7 @@ Config file is as very simple because it contains ony few tags:
   * `[LINKER_FLAGS]`    - Linker flags
 
 Other tags in braskets will be ignored.
-Value for each tag can be spanned on multiple lines
+Value for each tag can span over several lines.
 
 Example config file
 ```cfg
@@ -117,7 +117,7 @@ If you want to do full build then just remove `/bin` directory or delete every f
 
 ## Vim integration
 You can put those lines in .vimrc to make simple binds to build script.
-```rc
+```cfg
 " <F7> Will run full build
 nnoremap <F8> :!rm -r ./bin && ./build.sh <CR>
 
