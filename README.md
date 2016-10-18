@@ -116,7 +116,7 @@ If you want to do full build then just remove `/bin` directory or delete every f
 You can put those lines in .vimrc to make simple binds to build script.
 ```cfg
 " <F7> Will run full build
-nnoremap <F8> :!rm -r ./bin && ./build.sh <CR>
+nnoremap <F7> :!rm -r ./bin && ./build.sh <CR>
 
 " <F8> Will run smart build
 nnoremap <F8> :!./build.sh <CR>
@@ -124,7 +124,6 @@ nnoremap <F8> :!./build.sh <CR>
 " Super hacky thing(TM) to run compiled program by calling :!./thing 
 " where thing is path when vim was launched.
 " Works great with ./build.sh but **do not** change [EXEC_NAME] tag.
-" $ echo | basename `pwd`
 let out_program = "./" . system("basename `pwd`")
 nnoremap <F9> :exe ":!" . out_program <CR>
 ```
@@ -132,4 +131,3 @@ nnoremap <F9> :exe ":!" . out_program <CR>
 ## TODO:
  * support way to having multiple files with same names in different directories for `/bin` dir.
  * more customization in `build.cfg`?
- * better usage manual
