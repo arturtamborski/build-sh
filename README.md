@@ -3,13 +3,10 @@ build-sh
 ### Fast and simple build script for C/C++ projects.
 It works kind of like GNU Make. Great for simple projects with multiple files.
 
-
 ## Features
-  * Fast, in-shell script. Doesn't use external libraries or anything like that.
+  * Fast, in-shell script.
   * Separate config file for build management.
   * Smart compiling based on last edited files.
-  * Works in bash >= 4.0
-
 
 ## Usage
 ##### 1. Create project directory
@@ -21,7 +18,7 @@ It works kind of like GNU Make. Great for simple projects with multiple files.
 
 ##### 2. Download build script and make it executable
 ```shell
-~/newproject$ wget https://raw.githubusercontent.com/MrWeb123/build-sh/master/build.sh
+~/newproject$ wget https://raw.githubusercontent.com/arturtamborski/build-sh/master/build.sh
 ~/newproject$ chmod +x build.sh
 ```
 
