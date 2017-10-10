@@ -1,7 +1,8 @@
 build-sh
 ========
 ### Fast and simple build script for C/C++ projects.
-	It works similarly to GNU Make and it is great for short and simple apps with few source files.
+
+It works similarly to GNU Make and it is great for short and simple apps with few source files.
 
 ## Features
   * simple configuration file for compiler flags
